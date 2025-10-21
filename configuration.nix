@@ -55,7 +55,7 @@
   services.xserver.enable = true; # optional
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = true; 
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "fi";
@@ -105,7 +105,14 @@
 
 
   # ZSH
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+
+    interactiveShellInit = ''
+      eval "$(direnv hook zsh)"
+    '';
+  };
   users.defaultUserShell = pkgs.zsh;
 
   # VDPAU VAAPI
@@ -154,6 +161,12 @@
     };
   };
 
+  # Direnv
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;  # caches evaluation, much faster
+  };
+
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
@@ -184,7 +197,8 @@
     gh
     gimp
     libvoikko
-    jetbrains.pycharm-professional
+    deja-dup
+    claude-code
     (pkgs.callPackage ./pkgs/elan.nix {})
   ];
 
