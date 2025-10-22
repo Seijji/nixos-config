@@ -11,6 +11,9 @@
       ./modules/fonts.nix
     ];
 
+  # Home manager
+  home-manager.backupFileExtension = "backup";
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -103,17 +106,9 @@
     policies.DisableTelemetry = true;
   };
 
-
-  # ZSH
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-
-    interactiveShellInit = ''
-      eval "$(direnv hook zsh)"
-    '';
-  };
-  users.defaultUserShell = pkgs.zsh;
+  # Shell
+  users.users.seeji.shell = pkgs.zsh;
+  programs.zsh.enable = true;
 
   # VDPAU VAAPI
   # Enable OpenGL/graphics acceleration
