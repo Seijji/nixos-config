@@ -148,23 +148,6 @@
   # Overlays
   nixpkgs.overlays = [ (import ./overlays/zettlr.nix) ];
 
-  # Git
-  programs.git = {
-    enable = true;
-    config = {
-      user.name = "Seijji";
-      user.email = "fondly.possum@pm.me";
-      init.defaultBranch = "main";
-      pull.rebase = true;
-    };
-  };
-
-  # Direnv
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;  # caches evaluation, much faster
-  };
-
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
@@ -173,7 +156,6 @@
     wget
     hyfetch
     alacritty
-    kitty
     btop
     htop
     signal-desktop
