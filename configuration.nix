@@ -199,6 +199,7 @@
     libvoikko
     deja-dup
     claude-code
+    chromium
     (pkgs.callPackage ./pkgs/elan.nix {})
   ];
 
