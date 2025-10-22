@@ -91,7 +91,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.seeji = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "gamemode" "openrazer" "plugdev" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "gamemode" "openrazer" "plugdev" ];
     packages = with pkgs; [
       tree
     ];
@@ -132,6 +132,9 @@
     VDPAU_DRIVER = "radeonsi";
     LIBVA_DRIVER_NAME = "radeonsi";
   };
+
+  # Udev
+  services.udev.packages = [ pkgs.headsetcontrol ];
 
   # Steam
   programs.steam = {
@@ -200,6 +203,7 @@
     deja-dup
     claude-code
     chromium
+    headsetcontrol
     (pkgs.callPackage ./pkgs/elan.nix {})
   ];
 
