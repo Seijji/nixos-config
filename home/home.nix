@@ -3,6 +3,9 @@
   home.stateVersion = "25.05";
   home.packages = with pkgs; [
     meslo-lgs-nf
+    zotero
+    obsidian
+    pdftk
   ];
 
   programs.zsh = {
