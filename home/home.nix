@@ -4,8 +4,14 @@
   home.packages = with pkgs; [
     meslo-lgs-nf
     zotero
+    texliveFull
     obsidian
     pdftk
+    texstudio
+    biber
+    pandoc
+    liberation_ttf
+    cups-pdf-to-pdf
   ];
 
   programs.zsh = {
