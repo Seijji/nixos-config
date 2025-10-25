@@ -8,6 +8,7 @@
     obsidian
     pdftk
     texstudio
+    duf
     biber
     pandoc
     liberation_ttf
