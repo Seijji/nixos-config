@@ -9,7 +9,6 @@
     pdftk
     texstudio
     duf
-    biber
     pandoc
     liberation_ttf
     cups-pdf-to-pdf
