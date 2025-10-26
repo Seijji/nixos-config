@@ -9,7 +9,9 @@
     pdftk
     texstudio
     duf
+    kdePackages.ghostwriter
     pandoc
+    tex-fmt
     liberation_ttf
     cups-pdf-to-pdf
   ];
