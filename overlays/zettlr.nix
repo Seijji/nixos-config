@@ -2,10 +2,10 @@ final: prev: {
   zettlr =
     let
       pname = "zettlr";
-      version = "4.0.0-beta";
+      version = "3.6.0";
       src = prev.fetchurl {
         url = "https://github.com/Zettlr/Zettlr/releases/download/v${version}/Zettlr-${version}-x86_64.AppImage";
-        sha256 = "00wdkzqsshwd3v3k05p8y6xdfhkn6i6zmw2hvdkjg299q83kgk41";
+        sha256 = "1f0iw61agiblmpzw0113mhc6mxnvynd0ac0nkxlvm5w41w52f6hq";
       };
       appimageContents = prev.appimageTools.extractType2 {
         inherit pname version src;
