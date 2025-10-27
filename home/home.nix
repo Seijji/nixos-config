@@ -6,14 +6,16 @@
     zotero
     texliveFull
     obsidian
-    pdftk
     texstudio
-    duf
     kdePackages.ghostwriter
-    pandoc
     tex-fmt
     liberation_ttf
     cups-pdf-to-pdf
+    onlyoffice-bin
+    libreoffice-fresh
+    signal-desktop
+    vesktop
+    vscode
   ];
 
   programs.zsh = {

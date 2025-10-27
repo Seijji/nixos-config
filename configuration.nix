@@ -19,9 +19,13 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos.cachyOverride { mArch = "GENERIC_V3"; };
   boot.kernelParams = [ "amd_pstate=active" ];
   powerManagement.enable = true;
+
+  # SCX
+  # services.scx.enable = true;
+  # services.scx.scheduler = "scx_lavd";
 
   services.power-profiles-daemon.enable = true;
 
@@ -67,6 +71,9 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true; 
+
+  # Virtualization
+  virtualisation.vmware.host.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "fi";
@@ -166,8 +173,6 @@
     alacritty
     btop
     htop
-    signal-desktop
-    vesktop
     macchina
     openrazer-daemon
     polychromatic
@@ -175,13 +180,13 @@
     unzip
     zettlr
     neovim
+    pdftk
     zoom-us
-    onlyoffice-bin
-    libreoffice-fresh
     # hunspell
     # hunspellDicts.sv_FI
+    pandoc
+    duf
     nil
-    vscode
     gh
     gimp
     libvoikko
@@ -189,6 +194,7 @@
     claude-code
     chromium
     headsetcontrol
+    cryptomator
     (pkgs.callPackage ./pkgs/elan.nix {})
   ];
 
