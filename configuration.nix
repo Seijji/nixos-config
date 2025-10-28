@@ -161,7 +161,7 @@
   hardware.openrazer.enable = true;
 
   # Overlays
-  nixpkgs.overlays = [ (import ./overlays/zettlr.nix) ];
+  #nixpkgs.overlays = [ (import ./overlays/zettlr.nix) ];
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -195,6 +195,7 @@
     chromium
     headsetcontrol
     cryptomator
+    kdePackages.kcalc
     (pkgs.callPackage ./pkgs/elan.nix {})
   ];
 
