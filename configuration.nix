@@ -161,7 +161,7 @@
   hardware.openrazer.enable = true;
 
   # Overlays
-  #nixpkgs.overlays = [ (import ./overlays/zettlr.nix) ];
+  nixpkgs.overlays = [ (import ./overlays/zettlr.nix) ];
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -169,6 +169,7 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     nano
     wget
+    p7zip
     hyfetch
     alacritty
     btop
@@ -178,8 +179,7 @@
     polychromatic
     nvd
     unzip
-    #zettlr
-    #(callPackage ./pkgs/zettlr/zettlr.nix { })
+    zettlr
     neovim
     pdftk
     zoom-us
@@ -199,6 +199,7 @@
     cryptomator
     kdePackages.kcalc
     (pkgs.callPackage ./pkgs/elan/elan.nix {})
+    #(pkgs.callPackage ./pkgs/zettlr/zettlr.nix {})
   ];
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [

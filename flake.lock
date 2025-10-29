@@ -65,11 +65,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1761584077,
-        "narHash": "sha256-dISPEZahlfs5K6d58zR4akRRyogfE9P4WSyPPNT7HiE=",
+        "lastModified": 1761750844,
+        "narHash": "sha256-ab6kNHAEP/oWz8qdblnDw7TIwetr4GnmnDyvya0aw/k=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "e82585308aef3d4cc2c36c7b6946051c8cdf24ef",
+        "rev": "b8082c6803353456d45e6a8c0d4b36ad33fb7d6a",
         "type": "github"
       },
       "original": {
@@ -155,28 +155,11 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1735563628,
-        "narHash": "sha256-OnSAY7XDSx7CtDoqNh8jwVwh4xNL/2HaJxGjryLWzX8=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "b134951a4c9f3c995fd7be05f3243f8ecd65d798",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-24.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "chaotic": "chaotic",
         "home-manager": "home-manager_2",
-        "nixpkgs": "nixpkgs_2",
-        "zettlr-flake": "zettlr-flake"
+        "nixpkgs": "nixpkgs_2"
       }
     },
     "rust-overlay": {
@@ -199,20 +182,6 @@
         "repo": "rust-overlay",
         "type": "github"
       }
-    },
-    "zettlr-flake": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_3"
-      },
-      "locked": {
-        "path": "./pkgs/zettlr-flake",
-        "type": "path"
-      },
-      "original": {
-        "path": "./pkgs/zettlr-flake",
-        "type": "path"
-      },
-      "parent": []
     }
   },
   "root": "root",
