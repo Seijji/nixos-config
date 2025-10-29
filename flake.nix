@@ -1,15 +1,23 @@
 {
   description = "A minimal flake.nix for a NixOS machine";
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    zettlr-flake.url = "path:./pkgs/zettlr-flake";
   };
-  outputs = {self, nixpkgs, chaotic, home-manager, ... }@inputs: {
+
+  outputs = { self, nixpkgs, chaotic, home-manager, zettlr-flake, ... }@inputs:
+  let
+    system = "x86_64-linux";  # ← define it here, once
+    pkgs = import nixpkgs { inherit system; };
+  in {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux"; # Assumes a standard x86 CPU
+        inherit system;
         specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
@@ -20,11 +28,15 @@
             home-manager.useUserPackages = true;
             home-manager.users.seeji = ./home/home.nix;
 
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
+            environment.systemPackages = [
+              zettlr-flake.packages.${system}.zettlr-beta
+            ];
           }
         ];
       };
     };
+
+    # optional shortcut: allow `nix run .#zettlr-beta`
+    packages.${system}.zettlr-beta = zettlr-flake.packages.${system}.zettlr-beta;
   };
 }

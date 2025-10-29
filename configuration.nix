@@ -178,10 +178,12 @@
     polychromatic
     nvd
     unzip
-    zettlr
+    #zettlr
+    #(callPackage ./pkgs/zettlr/zettlr.nix { })
     neovim
     pdftk
     zoom-us
+    nemo-fileroller
     # hunspell
     # hunspellDicts.sv_FI
     pandoc
@@ -196,7 +198,7 @@
     headsetcontrol
     cryptomator
     kdePackages.kcalc
-    (pkgs.callPackage ./pkgs/elan.nix {})
+    (pkgs.callPackage ./pkgs/elan/elan.nix {})
   ];
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
