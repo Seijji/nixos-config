@@ -16,6 +16,7 @@
     signal-desktop
     vesktop
     vscode
+    audacity
   ];
 
   programs.zsh = {

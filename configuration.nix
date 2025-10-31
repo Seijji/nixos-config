@@ -161,7 +161,7 @@
   hardware.openrazer.enable = true;
 
   # Overlays
-  nixpkgs.overlays = [ (import ./overlays/zettlr.nix) ];
+  #nixpkgs.overlays = [ (import ./overlays/zettlr.nix) ];
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -179,7 +179,6 @@
     polychromatic
     nvd
     unzip
-    zettlr
     neovim
     pdftk
     zoom-us
@@ -198,8 +197,9 @@
     headsetcontrol
     cryptomator
     kdePackages.kcalc
+    #zettlr
     (pkgs.callPackage ./pkgs/elan/elan.nix {})
-    #(pkgs.callPackage ./pkgs/zettlr/zettlr.nix {})
+    (pkgs.callPackage ./pkgs/zettlr/zettlr.nix {})
   ];
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
