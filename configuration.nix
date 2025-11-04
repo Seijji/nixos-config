@@ -80,7 +80,10 @@
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;               # enable CUPS printing service
+    cups-pdf.enable = true;      # enable the virtual PDF printer
+  };
   services.avahi = {
     enable = true;
     nssmdns4 = true;
