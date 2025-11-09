@@ -27,6 +27,9 @@
   # services.scx.enable = true;
   # services.scx.scheduler = "scx_lavd";
 
+  # Flatpak
+  services.flatpak.enable = true;
+
   services.power-profiles-daemon.enable = true;
 
   # Enable zram swap
@@ -135,7 +138,7 @@
     enable32Bit = true;  # For 32-bit applications
     
     extraPackages = with pkgs; [
-      vaapiVdpau      # VDPAU backend for VAAPI
+      libva-vdpau-driver      # VDPAU backend for VAAPI
       libvdpau-va-gl  # VDPAU driver with VA-GL backend
       rocmPackages.clr.icd  # OpenCL support (optional)
     ];

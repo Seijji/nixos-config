@@ -25,12 +25,12 @@
 
 stdenv.mkDerivation rec {
   pname = "zettlr";
-  version = "4.0.0-beta.1";
+  version = "4.0.0-beta.2";
 
   src = fetchurl {
     url = "https://github.com/Zettlr/Zettlr/releases/download/v${version}/Zettlr-${version}-amd64.deb";
     # You'll need to get this hash
-    hash = "sha256-ZEQx4f8NlG8tiYlvhEXXJ8TyRBU3DvT4qSFp9fB2Tyg=";
+    hash = "sha256-58caeMpjdOVJXvAv7CWObAIdP1G6o1ZJPwA3XoDzLts=";
   };
 
   nativeBuildInputs = [

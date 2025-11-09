@@ -11,12 +11,17 @@
     tex-fmt
     liberation_ttf
     cups-pdf-to-pdf
-    onlyoffice-bin
+    onlyoffice-desktopeditors
     libreoffice-fresh
     signal-desktop
     vesktop
     vscode
     audacity
+    subtitleedit
+    ffmpeg
+    mpv
+    meld
+    kdePackages.kompare
   ];
 
   programs.zsh = {
