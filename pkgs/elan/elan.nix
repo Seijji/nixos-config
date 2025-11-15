@@ -47,7 +47,7 @@ let
 
     outputHashMode = "recursive";
     outputHashAlgo = "sha256";
-    outputHash = "sha256-monsX8hlxBkj2w/7Xgb+PwjEJCCG3BjPRBJZnIuqabk=";
+    outputHash = "sha256-vHBxyDLX7EnvzdD8ZlyoYBbEl70T1scCbRStOA0Jde0=";
 
     impureEnvVars = lib.fetchers.proxyImpureEnvVars;
   };

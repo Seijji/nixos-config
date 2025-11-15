@@ -201,7 +201,7 @@
     claude-code
     chromium
     headsetcontrol
-    cryptomator
+    #cryptomator
     kdePackages.kcalc
     #zettlr
     (pkgs.callPackage ./pkgs/elan/elan.nix {})
