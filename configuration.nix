@@ -204,9 +204,14 @@
     #cryptomator
     kdePackages.kcalc
     #zettlr
+    ffmpeg_6  # or ffmpeg_7, depending on what audacity needs
+    (audacity.override {
+      ffmpeg = ffmpeg_6;  # Match the version from ldd output
+    })
     (pkgs.callPackage ./pkgs/elan/elan.nix {})
     (pkgs.callPackage ./pkgs/zettlr/zettlr.nix {})
   ];
+  nixpkgs.config.audacity.ffmpeg = pkgs.ffmpeg;
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     plasma-browser-integration

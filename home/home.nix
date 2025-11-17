@@ -16,9 +16,8 @@
     signal-desktop
     vesktop
     vscode
-    audacity
+    #audacity
     subtitleedit
-    ffmpeg
     mpv
     meld
     kdePackages.kompare
