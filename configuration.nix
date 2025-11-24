@@ -205,6 +205,7 @@
     kdePackages.kcalc
     #zettlr
     ffmpeg_6  # or ffmpeg_7, depending on what audacity needs
+    gnome-boxes
     (audacity.override {
       ffmpeg = ffmpeg_6;  # Match the version from ldd output
     })
